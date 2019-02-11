@@ -16,6 +16,7 @@ exports.newApp = {
         const destinationDirectory = argv._[1] ? `${process.cwd()}/${argv._[1]}` : process.cwd();
         const templatesDir = `${__dirname}/new/templates`;
         console.log(`Destination Directory: ${destinationDirectory}`);
+        console.log('templatesDir: ' + templatesDir);
         yield fs.readdir(templatesDir, (_err, files) => {
             files.forEach(file => {
                 console.log(`Copying file: ${file}`);

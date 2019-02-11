@@ -8,6 +8,7 @@ export const newApp = {
     const templatesDir = `${__dirname}/new/templates`
 
     console.log(`Destination Directory: ${destinationDirectory}`)
+    console.log('templatesDir: ' + templatesDir)
 
     await fs.readdir(templatesDir, (_err, files) => {
       files.forEach(file => {
