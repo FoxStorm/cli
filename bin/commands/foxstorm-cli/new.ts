@@ -5,10 +5,9 @@ export const newApp = {
   describe: 'Create new FoxStorm Application',
   handler: async (argv: any) => {
     const destinationDirectory = argv._[1] ? `${process.cwd()}/${argv._[1]}` : process.cwd()
-    const templatesDir = `${__dirname}/new/templates`
+    const templatesDir = `${__dirname}/../bin/commands/foxstorm-cli/new/templates/`
 
     console.log(`Destination Directory: ${destinationDirectory}`)
-    console.log('templatesDir: ' + templatesDir)
 
     await fs.readdir(templatesDir, (_err, files) => {
       files.forEach(file => {
