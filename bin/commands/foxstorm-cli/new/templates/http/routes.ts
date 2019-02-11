@@ -1,10 +1,12 @@
-export const routes = (router: any): void => {
+import { Router, Request, Response } from 'foxstorm'
 
-  router.root((req: any, res: any) => {
+export const routes = (router: Router): void => {
+
+  router.root((req: Request, res: Response) => {
     res.render('welcome')
   })
 
-  router.post('/create', (req: any, res: any) => {
+  router.post('/create', (req: Request, res: Response) => {
     res.send('Hey')
   })
 }
