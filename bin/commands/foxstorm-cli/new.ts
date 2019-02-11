@@ -1,4 +1,5 @@
 import * as fs from 'fs-extra'
+import { exec } from 'child_process'
 
 export const newApp = {
   command: 'new',
@@ -16,5 +17,12 @@ export const newApp = {
     })
 
     await fs.copy(templatesDir, destinationDirectory)
+
+    const npmInstall = exec(`cd ${destinationDirectory} && npm install`, (err, stdout, stderr) => {
+      if (err) {
+        console.log(err)
+      }
+    })
+    npmInstall.stdout.pipe(process.stdout)
   }
 }

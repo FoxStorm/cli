@@ -9,6 +9,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs = require("fs-extra");
+const child_process_1 = require("child_process");
 exports.newApp = {
     command: 'new',
     describe: 'Create new FoxStorm Application',
@@ -22,6 +23,12 @@ exports.newApp = {
             });
         });
         yield fs.copy(templatesDir, destinationDirectory);
+        const npmInstall = child_process_1.exec(`cd ${destinationDirectory} && npm install`, (err, stdout, stderr) => {
+            if (err) {
+                console.log(err);
+            }
+        });
+        npmInstall.stdout.pipe(process.stdout);
     })
 };
 //# sourceMappingURL=new.js.map
