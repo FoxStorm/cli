@@ -1,9 +1,9 @@
 #! /usr/bin/env node
 
 import * as Yargs from 'yargs'
-import { newApp } from './foxstorm/new'
-import { serve } from './foxstorm/serve'
-import { generate } from './foxstorm/generate'
+import { newApp } from './foxstorm-cli/new'
+import { serve } from './foxstorm-cli/serve'
+import { generate } from './foxstorm-cli/generate'
 
 Yargs.demandCommand(1) // tslint:disable-line
   .strict()

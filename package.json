@@ -13,7 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "foxstorm": "bin/commands/foxstorm.ts"
+    "foxstorm-cli": "bin/commands/foxstorm-cli.ts"
   },
   "keywords": [
     "framework",
